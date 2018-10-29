@@ -1,8 +1,8 @@
 var https = require('https');
 
 var requestOptions = {
-  host: 'example.com',
-  path: '/'
+  host: 'sytantris.github.io',
+  path: '/http-examples/step1.html'
 };
 
 //GET a given URL
