@@ -1,0 +1,29 @@
+var https = require('https');
+
+var requestOptions = {
+  host: 'example.com',
+  path: '/'
+};
+
+//GET a given URL
+function getAndPrintHTMLChunks(callback) {
+
+  https.get(requestOptions, function (response) {
+
+    if  (response.statusCode !== 200) {
+      console.log("Error loading page: ", response.statuscode);
+    }
+
+    response.setEncoding('utf8');
+
+    response.on('data', function (data) {
+      console.log('Chunk Received. Content: \n' + data + "\n");
+    });
+
+  response.on('end', function () {
+    console.log('Response stream complete.');
+  });
+});
+
+}
+getAndPrintHTMLChunks();
