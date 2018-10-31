@@ -7,8 +7,6 @@ var requestOptions = {
 };
 
 
-function printHTML (dataStream) {
-  console.log(dataStream + "\n");
-}
+
 
 getHTML(requestOptions, printHTML);
